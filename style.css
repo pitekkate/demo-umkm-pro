@@ -1,0 +1,14 @@
+
+:root { --theme-color: #3b82f6; }
+body { scroll-behavior: smooth; }
+.bg-theme { background-color: var(--theme-color); }
+.text-theme { color: var(--theme-color); }
+.border-theme { border-color: var(--theme-color); }
+.ring-theme:focus { ring-color: var(--theme-color); }
+.hero-bg { background-size: cover; background-position: center; }
+/* Product Gallery CSS */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 2.5rem; }
+.gallery-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+.gallery-item img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s ease-in-out; }
+.gallery-item img:hover { transform: scale(1.05); }
+ body { font-family: 'Roboto Mono', monospace; background-color: #0f172a; color: #e2e8f0; } .gallery-item { border: 1px solid #334155; box-shadow: none; }
