@@ -1,30 +1,47 @@
 
 =================================
-WEBSITE UMKM ANDA TELAH SIAP!
+UMKM Website Generator - README
 =================================
 
-Terima kasih telah menggunakan UMKM AI Website Generator.
-Berikut adalah panduan singkat untuk menggunakan file-file ini.
+Terima kasih telah menggunakan generator website kami!
+File ZIP ini berisi semua yang Anda butuhkan untuk menjalankan website Anda.
 
-1. BUKA WEBSITE ANDA
-   Cukup buka file 'index.html' di browser Anda untuk melihat hasilnya.
+---------------------------------
+Konten File:
+---------------------------------
+- index.html: Halaman utama website Anda.
+- style.css: File styling. Anda bisa mengedit warna, font, dll di sini.
+- script.js: (Hanya versi Pro) Logika untuk memuat konten secara dinamis.
+- admin.html: (Hanya versi Pro) Halaman admin untuk mengedit konten website.
+- data.json: (Hanya versi Pro - Basic) File data konten website Anda.
+- README.txt: File ini.
 
-2. UPLOAD KE HOSTING
-   Upload semua file di dalam folder ini ke penyedia hosting Anda (misalnya Netlify, Vercel, atau cPanel hosting biasa). Pastikan semua file berada di folder yang sama.
+---------------------------------
+Cara Menjalankan Website:
+---------------------------------
+Cukup buka file `index.html` di browser Anda untuk melihatnya secara lokal.
+Untuk membuatnya online, upload semua file di dalam ZIP ini ke penyedia hosting.
+
 
 =================================
-LEVEL: DASAR (TOKEN)
+Panduan Admin (Level: Dasar)
 =================================
 
-Admin panel Anda menggunakan sistem keamanan sederhana berbasis token.
+Level keamanan ini sangat mudah digunakan dan tidak memerlukan setup server.
 
-- ADMIN PANEL: Buka file 'admin.html' di browser Anda.
-- TOKEN ANDA: a2xlusns
-- DATA HASH: -1949364791 (Simpan ini, digunakan untuk verifikasi)
+1.  **Login ke Halaman Admin:**
+    - Buka file `admin.html` di browser Anda.
+    - Masukkan token di bawah ini untuk login.
 
-CARA MENGGANTI TOKEN:
-1. Buka file 'admin.html' dengan editor teks.
-2. Cari variabel 'ADMIN_TOKEN_HASH' dan ganti nilainya dengan hash baru.
-3. Untuk membuat hash baru: buka browser, tekan F12 (Developer Tools), pergi ke tab 'Console', lalu ketik:
-   'GantiTokenBaru'.split('').reduce((a, b) => { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0)
-   Ganti 'GantiTokenBaru' dengan token yang Anda inginkan, lalu salin hasilnya.
+    **TOKEN ANDA:** admin-zcwrfw
+
+2.  **Mengedit Konten:**
+    - Setelah login, Anda akan melihat editor teks berisi data website dalam format JSON.
+    - Edit data sesuai keinginan Anda (misal: ganti nama produk, harga, dll).
+    - Klik tombol "Save Changes".
+
+3.  **Menerapkan Perubahan:**
+    - Setelah menyimpan, browser akan men-download file baru bernama `data.json`.
+    - Ganti file `data.json` yang lama di hosting Anda dengan file yang baru di-download ini.
+    - Refresh website Anda untuk melihat perubahan.
+
