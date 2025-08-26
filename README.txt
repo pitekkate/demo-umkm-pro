@@ -19,8 +19,8 @@ LEVEL: DASAR (TOKEN)
 Admin panel Anda menggunakan sistem keamanan sederhana berbasis token.
 
 - ADMIN PANEL: Buka file 'admin.html' di browser Anda.
-- TOKEN ANDA: 1ccavmwx
-- DATA HASH: -1699318172 (Simpan ini, digunakan untuk verifikasi)
+- TOKEN ANDA: a2xlusns
+- DATA HASH: -1949364791 (Simpan ini, digunakan untuk verifikasi)
 
 CARA MENGGANTI TOKEN:
 1. Buka file 'admin.html' dengan editor teks.
