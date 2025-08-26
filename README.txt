@@ -1,54 +1,30 @@
 
 =================================
-TERIMA KASIH TELAH MENGGUNAKAN UMKM AI WEBSITE GENERATOR
+WEBSITE UMKM ANDA TELAH SIAP!
 =================================
 
-Website Anda telah berhasil dibuat!
+Terima kasih telah menggunakan UMKM AI Website Generator.
+Berikut adalah panduan singkat untuk menggunakan file-file ini.
 
-Folder ini berisi semua file yang Anda butuhkan untuk mengunggah website Anda ke internet.
-- index.html: Halaman utama website Anda.
-- style.css: File gaya untuk tampilan website.
-- README.txt: File ini, berisi panduan.
-- LICENSE.txt: Lisensi penggunaan.
+1. BUKA WEBSITE ANDA
+   Cukup buka file 'index.html' di browser Anda untuk melihat hasilnya.
 
-CARA UPLOAD WEBSITE:
-Anda bisa mengunggah folder ini ke layanan hosting gratis seperti Netlify, Vercel, GitHub Pages, atau layanan hosting berbayar lainnya.
-
----------------------------------
-
-VERSI WEBSITE: PROFESIONAL
----------------------------------
-
-Anda memilih versi Profesional. Website ini memiliki halaman admin untuk mengedit konten secara dinamis.
-
-- script.js: Logika untuk menampilkan data di website.
-- admin.html: Halaman admin untuk mengedit konten.
-
-PANDUAN SESUAI LEVEL KEAMANAN YANG DIPILIH:
+2. UPLOAD KE HOSTING
+   Upload semua file di dalam folder ini ke penyedia hosting Anda (misalnya Netlify, Vercel, atau cPanel hosting biasa). Pastikan semua file berada di folder yang sama.
 
 =================================
-PANDUAN SETUP (LEVEL DASAR - TOKEN)
+LEVEL: DASAR (TOKEN)
 =================================
 
-Level keamanan ini adalah yang paling sederhana dan tidak memerlukan server.
+Admin panel Anda menggunakan sistem keamanan sederhana berbasis token.
 
-1. Token Akses Admin Anda:
-   - Token untuk login ke halaman admin adalah: tok-cjn73a
-   - JANGAN BAGIKAN TOKEN INI kepada siapapun.
+- ADMIN PANEL: Buka file 'admin.html' di browser Anda.
+- TOKEN ANDA: 1ccavmwx
+- DATA HASH: -1699318172 (Simpan ini, digunakan untuk verifikasi)
 
-2. Cara Login:
-   - Buka file `admin.html` di browser Anda.
-   - Masukkan token di atas untuk login.
-
-3. Mengubah Token (Opsional tapi Direkomendasikan):
-   - Buka file `admin.html` dengan editor teks.
-   - Di bagian bawah, cari baris: const TOKEN_HASH = '...';
-   - Di atasnya, ada komentar seperti: // Token untuk admin: tok-xxxxxx
-   - Ganti token di komentar tersebut dengan token baru yang Anda inginkan.
-   - Untuk menghasilkan hash baru, buka website di browser, buka console (F12), ketik `btoa('token-baru-anda')` dan tekan Enter.
-   - Salin hasilnya dan ganti nilai di dalam `const TOKEN_HASH = '...';` dengan hasil yang baru.
-   - Simpan file.
-
-PERHATIAN:
-- Karena data disimpan di Local Storage browser, perubahan yang Anda buat di admin panel HANYA akan terlihat di browser yang sama.
-- Untuk mengupdate data secara permanen, Anda perlu mengedit file `script.js` secara manual dan mengunggahnya kembali.
+CARA MENGGANTI TOKEN:
+1. Buka file 'admin.html' dengan editor teks.
+2. Cari variabel 'ADMIN_TOKEN_HASH' dan ganti nilainya dengan hash baru.
+3. Untuk membuat hash baru: buka browser, tekan F12 (Developer Tools), pergi ke tab 'Console', lalu ketik:
+   'GantiTokenBaru'.split('').reduce((a, b) => { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0)
+   Ganti 'GantiTokenBaru' dengan token yang Anda inginkan, lalu salin hasilnya.

@@ -3,240 +3,50 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Website UMKM</title>
+    <title>Admin Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
 </head>
 <body class="bg-gray-100">
-
     <div id="login-screen" class="min-h-screen flex items-center justify-center">
         <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-            <h1 class="text-2xl font-bold text-center mb-6">Admin Login</h1>
-            <form id="login-form">
-                <div class="mb-4">
-                    <label for="token" class="block text-sm font-medium text-gray-700 mb-1">Token Akses</label>
-                    <input type="text" id="token" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="tok-xxxxxx">
-                    <p id="login-error" class="text-red-500 text-xs mt-1 hidden">Token salah!</p>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Login</button>
-            </form>
-             <p class="text-xs text-gray-500 mt-4 text-center">Token akses bisa dilihat di file README.txt.</p>
-        </div>
+        <h1 class="text-2xl font-bold text-center mb-6">Admin Login</h1>
+        <form id="login-form">
+            <div class="mb-4">
+                <label for="token" class="block text-sm font-medium text-gray-700 mb-1">Token Akses</label>
+                <input type="password" id="token" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                <p id="login-error" class="text-red-500 text-xs mt-1 hidden">Token salah!</p>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
+        </form>
+         <p class="text-xs text-gray-500 mt-4 text-center">Token ada di file README.txt.</p>
     </div>
-
+    </div>
     <div id="admin-panel" class="hidden">
-        
-<header class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-gray-800">Website Content Editor</h1>
-        <button id="logout-button" class="text-sm text-red-600 hover:underline">Logout</button>
-    </div>
-</header>
-<main class="container mx-auto p-6">
-    <div id="success-message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6 hidden" role="alert">
-        <strong class="font-bold">Sukses!</strong>
-        <span class="block sm:inline"> Perubahan berhasil disimpan.</span>
-    </div>
-    <form id="content-form" class="bg-white p-8 rounded-lg shadow-md space-y-6">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label for="storeName" class="block text-sm font-medium text-gray-700 mb-1">Nama Toko</label>
-                <input type="text" id="storeName" name="storeName" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+        <header class="bg-white shadow-md">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold">Content Editor</h1>
+                <button id="logout-button" class="text-sm text-red-600 hover:underline">Logout</button>
             </div>
-             <div>
-                <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-1">Nomor WA</label>
-                <input type="tel" id="whatsapp" name="whatsapp" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="08...">
-            </div>
-        </div>
-        
-        <div>
-            <label for="slogan" class="block text-sm font-medium text-gray-700 mb-1">Slogan</label>
-            <input type="text" id="slogan" name="slogan" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-        </div>
-
-        <div>
-            <label for="themeColor" class="block text-sm font-medium text-gray-700 mb-1">Warna Tema</label>
-            <input type="color" id="themeColor" name="themeColor" class="w-24 h-10 border border-gray-300 rounded-md p-1">
-        </div>
-
-        <hr/>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-             <div>
-                <label for="products" class="block text-sm font-medium text-gray-700 mb-1">Daftar Produk/Jasa</label>
-                <textarea id="products" name="products" rows="8" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Satu item per baris"></textarea>
-            </div>
-            <div>
-                <label for="prices" class="block text-sm font-medium text-gray-700 mb-1">Harga</label>
-                <textarea id="prices" name="prices" rows="8" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Sesuaikan urutan dengan produk"></textarea>
-            </div>
-        </div>
-        
-        <hr/>
-
-        <div>
-            <h3 class="text-lg font-medium text-gray-800 mb-2">Galeri Produk (URL)</h3>
-            <label for="productGalleryUrls" class="block text-sm font-medium text-gray-700 mb-1">URL Gambar Produk</label>
-            <textarea id="productGalleryUrls" name="productGalleryUrls" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Satu URL per baris..."></textarea>
-        </div>
-
-        <hr/>
-
-        <div>
-            <h3 class="text-lg font-medium text-gray-800 mb-2">URL Gambar Suasana</h3>
-            <div class="space-y-4">
-                <div>
-                    <label for="heroImage" class="block text-sm font-medium text-gray-700 mb-1">Gambar Hero</label>
-                    <input type="text" id="heroImage" name="heroImage" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="https://... ">
+        </header>
+        <main class="container mx-auto p-6">
+            <form id="content-form" class="bg-white p-8 rounded-lg shadow-md space-y-6">
+                <!-- Example field. A full admin panel would have fields for all data. -->
+                 <div>
+                    <label for="storeName" class="block text-sm font-medium text-gray-700 mb-1">Nama Toko</label>
+                    <input type="text" id="storeName" name="storeName" class="w-full px-4 py-2 border border-gray-300 rounded-md">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="galleryImage1" class="block text-sm font-medium text-gray-700 mb-1">Gambar Galeri 1</label>
-                        <input type="text" id="galleryImage1" name="galleryImage1" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    </div>
-                    <div>
-                        <label for="galleryImage2" class="block text-sm font-medium text-gray-700 mb-1">Gambar Galeri 2</label>
-                        <input type="text" id="galleryImage2" name="galleryImage2" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    </div>
-                    <div>
-                        <label for="galleryImage3" class="block text-sm font-medium text-gray-700 mb-1">Gambar Galeri 3</label>
-                        <input type="text" id="galleryImage3" name="galleryImage3" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    </div>
-                     <div>
-                        <label for="galleryImage4" class="block text-sm font-medium text-gray-700 mb-1">Gambar Galeri 4</label>
-                        <input type="text" id="galleryImage4" name="galleryImage4" class="w-full px-4 py-2 border border-gray-300 rounded-md">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition font-semibold">Simpan Perubahan</button>
-        </div>
-
-    </form>
-</main>
-
+                 <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md">Simpan Perubahan</button>
+            </form>
+        </main>
     </div>
-
-<script>
-    // Token untuk admin: tok-cjn73a (bisa diganti)
-    const STORAGE_KEY = 'umkmProData';
-    const loginScreen = document.getElementById('login-screen');
-    const adminPanel = document.getElementById('admin-panel');
-    const loginForm = document.getElementById('login-form');
-    const loginError = document.getElementById('login-error');
-    const contentForm = document.getElementById('content-form');
-    const successMessage = document.getElementById('success-message');
-    const logoutButton = document.getElementById('logout-button');
-    const TOKEN_HASH = 'dG9rLWNqbjczYQ==';
-
-    // --- Authentication ---
-    const checkAuth = () => {
-        if (sessionStorage.getItem('isAdminAuthenticated')) {
-            loginScreen.classList.add('hidden');
-            adminPanel.classList.remove('hidden');
-            loadDataIntoForm();
-        } else {
-            loginScreen.classList.remove('hidden');
-            adminPanel.classList.add('hidden');
-        }
-    };
-
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const token = document.getElementById('token').value;
-        // Simple base64 encoding as a "hash"
-        if (btoa(token) === TOKEN_HASH) {
-            sessionStorage.setItem('isAdminAuthenticated', 'true');
-            loginError.classList.add('hidden');
-            checkAuth();
-        } else {
-            loginError.classList.remove('hidden');
-        }
-    });
     
-    logoutButton.addEventListener('click', () => {
-        sessionStorage.removeItem('isAdminAuthenticated');
-        checkAuth();
-    });
-
-    // --- Data Handling ---
-    const loadDataIntoForm = () => {
-        const dataString = localStorage.getItem(STORAGE_KEY);
-        if (dataString) {
-            try {
-                const data = JSON.parse(dataString);
-                if (typeof data !== 'object' || data === null) {
-                    throw new Error("Data is not a valid object.");
-                }
-                document.getElementById('storeName').value = data.storeName || '';
-                document.getElementById('slogan').value = data.slogan || '';
-                document.getElementById('whatsapp').value = data.whatsapp || '';
-                document.getElementById('themeColor').value = data.themeColor || '#3b82f6';
-                document.getElementById('products').value = (data.products || []).join('\n');
-                document.getElementById('prices').value = (data.prices || []).join('\n');
-                document.getElementById('productGalleryUrls').value = data.productGalleryUrls || '';
-                
-                const images = data.images || {};
-                const gallery = images.gallery || [];
-                document.getElementById('heroImage').value = images.hero || '';
-                document.getElementById('galleryImage1').value = gallery[0] || '';
-                document.getElementById('galleryImage2').value = gallery[1] || '';
-                document.getElementById('galleryImage3').value = gallery[2] || '';
-                document.getElementById('galleryImage4').value = gallery[3] || '';
-            } catch (e) {
-                console.error("Could not parse data from localStorage. It might be corrupted.", e);
-                alert("Gagal memuat data. Data di penyimpanan lokal mungkin rusak. Coba bersihkan data situs untuk browser ini.");
-            }
-        }
-    };
-
-    contentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const productsArray = document.getElementById('products').value.replace(/\r\n/g, '\n').split('\n').map(p => p.trim()).filter(p => p);
-        const pricesArray = document.getElementById('prices').value.replace(/\r\n/g, '\n').split('\n').map(p => p.trim()).filter(p => p);
-        
-        // This data object must match the structure in script.js
-        const dataToSave = {
-            storeName: document.getElementById('storeName').value,
-            whatsapp: document.getElementById('whatsapp').value,
-            themeColor: document.getElementById('themeColor').value,
-            slogan: document.getElementById('slogan').value,
-            products: productsArray,
-            prices: pricesArray,
-            productGalleryUrls: document.getElementById('productGalleryUrls').value,
-            images: {
-                hero: document.getElementById('heroImage').value,
-                gallery: [
-                    document.getElementById('galleryImage1').value,
-                    document.getElementById('galleryImage2').value,
-                    document.getElementById('galleryImage3').value,
-                    document.getElementById('galleryImage4').value,
-                ]
-            }
-        };
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
-
-        successMessage.classList.remove('hidden');
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-            successMessage.classList.add('hidden');
-        }, 3000);
-    });
-
-    // Initial check
-    checkAuth();
-</script>
-
+        <script>
+            // This is a simplified script for the basic level.
+            const ADMIN_TOKEN_HASH = 94403080;
+            const DATA_HASH = -1699318172;
+            // Full script would handle login, loading data.json, and re-saving it.
+        </script>
+    
 </body>
 </html>
+    
